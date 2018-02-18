@@ -1,0 +1,15 @@
+version: '2'
+services:
+  solr:
+    container_name: grails-solr
+    image: solr:7.1.0-slim
+    ports:
+     - "8983:8983"
+    volumes:
+      - data:/opt/solr/server/solr/mycores
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - grailscol
+volumes:
+  data:
