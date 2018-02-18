@@ -5,6 +5,7 @@ class ExploreController {
     def grailsBlogService
 
     def index() {
+        grailsBlogService.saveDomainBlogInSolr()
         grailsBlogService.saveSomeBlogInSolr()
         render 'Solr Index'
     }

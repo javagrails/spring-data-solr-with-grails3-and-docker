@@ -1,5 +1,6 @@
 package normal
 
+import assolrdoc.Blog
 import grails.gorm.transactions.Transactional
 import org.springframework.data.domain.PageRequest
 import spring.style.service.dto.SolrBlogDTO
@@ -24,9 +25,41 @@ class GrailsBlogService {
                 '}';
     }*/
 
+    def saveDomainBlogInSolr() {
+
+        (1..2).each { item ->
+            String docId = item.toString()
+            String docTitle = 'Document_title_'+docId
+            String docUrl = 'http://www.open.com/Document_url_'+docId
+            String docDescription = 'Document_description_'+docId
+            String docImageUrl = 'http://placehold.it/50x50'
+            Set<String> docCities = ["Dhaka", "Tangail", "Dhanbari", "Madhupur"]
+            Set<Long> docCityIds = [10, 11, 12, 13]
+            Double docPrice = Math.random()*2.9
+            Date fetchedDate = new Date().minus(2)
+            Date lastModified = new Date().plus(2)
+
+            Blog doc = new Blog()
+            doc.id=Long.parseLong(docId)
+            doc.title=docTitle
+            doc.url=docUrl
+            doc.description=docDescription
+            doc.score=Math.random().longValue()
+            doc.imageUrl=docImageUrl
+            doc.cities=docCities
+            doc.cityIds=docCityIds
+            doc.price=docPrice
+            doc.fetchedDate=fetchedDate
+            doc.lastModified=lastModified
+
+            println('Domain Blog = '+doc)
+            springBlogService.blogSearchRepository.save(doc)
+        }
+    }
+
     def saveSomeBlogInSolr() {
 
-        (8..9).each { item ->
+        (3..4).each { item ->
             String docId = item.toString()
             String docTitle = 'Document_title_'+docId
             String docUrl = 'http://www.open.com/Document_url_'+docId
