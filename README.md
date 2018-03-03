@@ -49,7 +49,8 @@ Delete Collection [ grailscol, blogs ] from solr(at docker)
 
     docker exec -it --user=solr grails-solr bin/solr delete -c grailscol
     docker exec -it --user=solr grails-solr bin/solr delete -c blogs
-   
+
+-- End   
 
 
 
