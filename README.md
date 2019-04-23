@@ -1,4 +1,6 @@
 ## How to use spring-data-solr with grails-3.3.2 and solr in docker for development purpose
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjavagrails%2Fspring-data-solr-with-grails3-and-docker.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjavagrails%2Fspring-data-solr-with-grails3-and-docker?ref=badge_shield)
+
 
 ##### 1. Include Spring Data Solr lib in gradle dependencies in build.gradle file
 
@@ -56,3 +58,7 @@ Delete Collection [ grailscol, blogs ] from solr(at docker)
 
 
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjavagrails%2Fspring-data-solr-with-grails3-and-docker.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjavagrails%2Fspring-data-solr-with-grails3-and-docker?ref=badge_large)
